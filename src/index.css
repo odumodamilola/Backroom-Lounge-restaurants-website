@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-bebas: "Bebas Neue", cursive;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --spacing-container: clamp(1rem, 5vw, 4rem);
+
+  /* Comprehensive Breakpoint System */
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1920px;
+
+  /* Fluid Typography Scale */
+  --text-fluid-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-fluid-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-fluid-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-fluid-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-fluid-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-fluid-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --text-fluid-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+  --text-fluid-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3rem);
+  --text-fluid-5xl: clamp(3rem, 2rem + 5vw, 4.5rem);
+
+  /* Fluid Spacing System */
+  --space-fluid-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --space-fluid-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1rem);
+  --space-fluid-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  --space-fluid-lg: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --space-fluid-xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+  --space-fluid-2xl: clamp(3rem, 2rem + 5vw, 4rem);
+  --space-fluid-3xl: clamp(4rem, 2.5rem + 7.5vw, 6rem);
+
+  /* Fluid Container */
+  --container-fluid: clamp(20rem, 90vw, 80rem);
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #09090b;
+    --surface: #fafafa;
+    --surface-soft: #f4f4f5;
+    --primary: #e31e24;
+    --primary-dark: #b01419;
+    --accent: #f5a623;
+    --border: #e4e4e7;
+    --muted: #71717a;
+    --muted-foreground: #a1a1aa;
+    
+    --fluid-320-1920: clamp(1rem, 0.8rem + 1vw, 2.5rem);
+  }
+
+  .dark {
+    --background: #09090b;
+    --foreground: #fafafa;
+    --surface: #0c0c0e;
+    --surface-soft: #18181b;
+    --border: #27272a;
+    --muted: #a1a1aa;
+    --muted-foreground: #52525b;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-white overflow-x-hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    cursor: none;
+  }
+
+  /* Fluid Headings */
+  h1 { @apply font-bebas text-[clamp(4rem,15vw,12rem)] leading-[0.85] tracking-tighter; }
+  h2 { @apply font-bebas text-[clamp(2.5rem,8vw,6rem)] leading-[0.9]; }
+  h3 { @apply font-display font-bold text-[clamp(1.25rem,4vw,2.5rem)] leading-tight; }
+
+  .cursor-dot {
+    @apply fixed w-3 h-3 bg-primary rounded-full pointer-events-none z-[99999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-200;
+  }
+
+  .cursor-ring {
+    @apply fixed w-10 h-10 border-2 border-primary/40 rounded-full pointer-events-none z-[99998] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out;
+  }
+
+  .noise-overlay {
+    @apply fixed inset-0 pointer-events-none z-[9999] opacity-[0.03] mix-blend-overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .vertical-text {
+    writing-mode: vertical-rl;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(227, 30, 36, 0.3);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .container-xl {
+    @apply max-w-[1920px] mx-auto px-[var(--spacing-container)];
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+html { scroll-behavior: smooth; }
+
+/* Shimmer loading animation for images */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+}
+
+/* Smooth image reveal */
+img {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@media (pointer: coarse) {
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
