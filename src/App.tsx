@@ -155,14 +155,14 @@ function Home() {
               </section>
 
               {/* Story Section */}
-              <section id="about" className="py-20 lg:py-48 bg-surface-soft/20 border-y border-border relative overflow-hidden">
-                <div className="container-xl grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
-                  <div className="relative perspective-1000 order-2 lg:order-1">
+              <section id="about" className="py-16 sm:py-24 lg:py-48 bg-surface-soft/20 border-y border-border relative overflow-hidden">
+                <div className="container-xl grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-20 lg:gap-32 items-center">
+                  <div className="relative perspective-1000 order-2 lg:order-1 px-4 sm:px-0">
                      <motion.div 
                       initial={{ rotateY: -15, rotateX: 10, opacity: 0 }}
                       whileInView={{ rotateY: 0, rotateX: 0, opacity: 1 }}
                       transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-                      className="aspect-square lg:aspect-[4/5] bg-gradient-to-br from-surface to-background border border-border rounded-[2rem] lg:rounded-[4rem] overflow-hidden relative"
+                      className="aspect-square lg:aspect-[4/5] bg-gradient-to-br from-surface to-background border border-border rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[4rem] overflow-hidden relative"
                      >
                        <video
                         src={backroomVideo}
@@ -176,22 +176,22 @@ function Home() {
                      </motion.div>
                   </div>
 
-                  <div className="max-w-2xl order-1 lg:order-2">
-                    <span className="font-display text-[11px] lg:text-[13px] font-bold tracking-[0.5em] text-primary uppercase block mb-6 lg:mb-10">Our Roots</span>
-                    <h2 className="mb-8 lg:mb-12 text-foreground">MORE THAN A LOUNGE. <span className="text-primary italic">A RESET.</span></h2>
-                    <p className="text-muted text-lg lg:text-2xl leading-relaxed mb-12 font-sans italic lg:not-italic lg:text-muted/80">
+                  <div className="max-w-2xl order-1 lg:order-2 px-4 sm:px-0">
+                    <span className="font-display text-[9px] sm:text-[11px] lg:text-[13px] font-bold tracking-[0.3em] sm:tracking-[0.5em] text-primary uppercase block mb-4 sm:mb-6 lg:mb-10">Our Roots</span>
+                    <h2 className="mb-6 sm:mb-8 lg:mb-12 text-foreground text-3xl sm:text-4xl lg:text-5xl xl:text-6xl uppercase">MORE THAN A LOUNGE. <span className="text-primary italic">A RESET.</span></h2>
+                    <p className="text-muted text-base sm:text-lg lg:text-2xl leading-relaxed mb-8 sm:mb-12 font-sans italic lg:not-italic lg:text-muted/80">
                       Backroom Lounge in Osogbo combines hospitality, culture, and calm in one intentional space. Come for refreshments, stay for quiet reflection, cultural discovery, and gatherings built around heritage and spirit.
                     </p>
                     
                     <button 
                       onClick={() => navigate('/details')}
-                      className="group flex items-center gap-4 text-primary font-display text-[11px] font-bold tracking-[0.2em] uppercase mb-12 hover:gap-6 transition-all"
+                      className="group flex items-center gap-4 text-primary font-display text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase mb-10 sm:mb-12 hover:gap-6 transition-all active:scale-95"
                     >
                       Our Philosophy
                       <ArrowRight size={14} />
                     </button>
 
-                    <div className="grid grid-cols-2 gap-12 lg:gap-20">
+                    <div className="grid grid-cols-2 gap-8 sm:gap-12 lg:gap-20">
                       {[
                         { label: "Cafe & Refreshments", val: "OPEN" },
                         { label: "Cultural Museum", val: "ON-SITE" },
@@ -204,8 +204,8 @@ function Home() {
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.2 + i * 0.1 }}
                         >
-                          <div className="font-bebas text-5xl lg:text-7xl mb-2 text-foreground">{stat.val}</div>
-                          <div className="font-display text-[9px] lg:text-[11px] font-bold tracking-[0.3em] text-muted-foreground uppercase">{stat.label}</div>
+                          <div className="font-bebas text-4xl sm:text-5xl lg:text-7xl mb-1 sm:mb-2 text-foreground">{stat.val}</div>
+                          <div className="font-display text-[8px] sm:text-[9px] lg:text-[11px] font-bold tracking-[0.2em] sm:tracking-[0.3em] text-muted-foreground uppercase">{stat.label}</div>
                         </motion.div>
                       ))}
                     </div>
@@ -214,7 +214,7 @@ function Home() {
               </section>
 
               {/* Location Section */}
-              <section id="location" className="py-12 sm:py-16 md:py-20 lg:py-40 xl:py-48 relative overflow-hidden">
+              <section id="location" className="py-16 sm:py-20 lg:py-40 xl:py-48 relative overflow-hidden">
                 {/* Background image for section depth */}
                 <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
                   <OptimizedImage 
@@ -223,20 +223,20 @@ function Home() {
                     className="w-full h-full object-cover grayscale"
                   />
                 </div>
-                <div className="container-xl relative z-10">
+                <div className="container-xl relative z-10 px-4 sm:px-6 md:px-8 lg:px-12">
                    <div className="relative border border-border rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[5rem] overflow-hidden bg-surface shadow-2xl group">
                       {/* Abstract Interactive Glow */}
                       <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full hidden lg:block bg-gradient-to-bl from-primary/5 to-transparent pointer-events-none" />
                       
                       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
-                        <div className="p-6 sm:p-8 md:p-10 lg:p-24 border-b lg:border-b-0 lg:border-r border-border">
-                          <span className="font-display text-[9px] sm:text-[10px] lg:text-[12px] font-bold tracking-[0.3em] sm:tracking-[0.4em] text-accent uppercase block mb-6 sm:mb-8 lg:mb-12">Visit Us</span>
-                          <h2 className="mb-8 sm:mb-10 lg:mb-16 md:mb-20 uppercase text-foreground text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">EXPERIENCE <br/> <span className="text-primary italic">.</span></h2>
+                        <div className="p-6 sm:p-10 md:p-12 lg:p-24 border-b lg:border-b-0 lg:border-r border-border">
+                          <span className="font-display text-[9px] sm:text-[11px] lg:text-[12px] font-bold tracking-[0.3em] sm:tracking-[0.4em] text-accent uppercase block mb-6 sm:mb-8 lg:mb-12">Visit Us</span>
+                          <h2 className="mb-8 sm:mb-12 lg:mb-16 md:mb-20 uppercase text-foreground text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight">EXPERIENCE <br/> <span className="text-primary italic">THE CALM.</span></h2>
                           
-                          <div className="flex flex-col gap-8 sm:gap-10 lg:gap-16 mb-10 sm:mb-12 lg:mb-16 xl:mb-24">
+                          <div className="flex flex-col gap-8 sm:gap-12 lg:gap-16 mb-10 sm:mb-16 xl:mb-24">
                              <div>
-                                <h4 className="font-display text-[9px] sm:text-[10px] lg:text-[12px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-primary mb-3 sm:mb-4">Our Home</h4>
-                                <p className="text-muted font-sans text-base sm:text-xl lg:text-3xl leading-tight">
+                                <h4 className="font-display text-[9px] sm:text-[11px] lg:text-[12px] font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-primary mb-3 sm:mb-4">Our Home</h4>
+                                <p className="text-muted font-sans text-lg sm:text-2xl lg:text-3xl leading-tight">
                                    1, Mandela Freedom Park,<br />
                                    Alekunwodo, Osogbo,<br />
                                    Nigeria
@@ -244,11 +244,11 @@ function Home() {
                              </div>
                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                                 <div>
-                                  <h4 className="font-display text-[8px] sm:text-[9px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-muted-foreground mb-2 sm:mb-3">Service Hours</h4>
+                                  <h4 className="font-display text-[8px] sm:text-[9px] font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-muted-foreground mb-2 sm:mb-3">Service Hours</h4>
                                   <p className="text-muted font-sans text-sm sm:text-base tracking-wide">11:00 — 23:00 DAILY</p>
                                 </div>
                                 <div>
-                                  <h4 className="font-display text-[8px] sm:text-[9px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-muted-foreground mb-2 sm:mb-3">Priority Line</h4>
+                                  <h4 className="font-display text-[8px] sm:text-[9px] font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-muted-foreground mb-2 sm:mb-3">Priority Line</h4>
                                   <p className="text-muted font-sans text-sm sm:text-base tracking-wide">+234 905 306 3345</p>
                                 </div>
                              </div>
@@ -260,7 +260,7 @@ function Home() {
                           </div>
                         </div>
 
-                        <div className="h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto relative overflow-hidden">
+                        <div className="h-[300px] sm:h-[400px] md:h-[450px] lg:h-auto relative overflow-hidden">
                            <iframe 
                               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1077749529154!2d4.5436992740078574!3d7.778395992241195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103787ebe8625a2f%3A0x287ea83fa338f825!2sNelson%20Mandela%20Freedom%20Park!5e0!3m2!1sen!2sng!4v1779231947858!5m2!1sen!2sng"
                               className="w-full h-full border-0"

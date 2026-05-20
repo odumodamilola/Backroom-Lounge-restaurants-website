@@ -42,7 +42,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <h1 className="text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-2xl">
+          <h1 className="text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-2xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] sm:leading-none">
             WHERE CALM<br />
             <span className="text-primary italic">CULTURE</span> MEETS<br />
             CLASSY LOUNGING<span className="text-primary">.</span>
@@ -52,7 +52,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-white/70 text-base sm:text-lg lg:text-xl xl:text-2xl font-sans max-w-xl mb-8 sm:mb-10 lg:mb-14 leading-relaxed"
+            className="text-white/70 text-sm sm:text-lg lg:text-xl xl:text-2xl font-sans max-w-xl mb-8 sm:mb-10 lg:mb-14 leading-relaxed"
           >
             A tranquil multipurpose space for refreshments, cultural discovery, quiet retreat, and curated community gatherings.
           </motion.p>
@@ -61,17 +61,17 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-4 lg:gap-6"
           >
             <a
               href="#cocktails"
-              className="bg-primary hover:bg-primary-dark text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-5 rounded-full font-display text-[10px] sm:text-[11px] lg:text-[12px] font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all hover:scale-105 shadow-lg shadow-primary/20 text-center active:scale-95"
+              className="bg-primary hover:bg-primary-dark text-white px-6 sm:px-8 lg:px-12 py-4 sm:py-4 lg:py-5 rounded-full font-display text-[11px] sm:text-[11px] lg:text-[12px] font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all hover:scale-105 shadow-lg shadow-primary/20 text-center active:scale-95"
             >
               Explore Selection
             </a>
             <a
               href="#location"
-              className="border border-white/20 hover:border-white/50 text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-5 rounded-full font-display text-[10px] sm:text-[11px] lg:text-[12px] font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all hover:bg-white/5 backdrop-blur-sm text-center active:scale-95"
+              className="border border-white/20 hover:border-white/50 text-white px-6 sm:px-8 lg:px-12 py-4 sm:py-4 lg:py-5 rounded-full font-display text-[11px] sm:text-[11px] lg:text-[12px] font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all hover:bg-white/5 backdrop-blur-sm text-center active:scale-95"
             >
               Plan a Visit
             </a>

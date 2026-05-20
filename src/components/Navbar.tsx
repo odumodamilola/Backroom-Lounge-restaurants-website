@@ -43,7 +43,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
           </a>
 
           {/* Desktop Category Navigation */}
-          <div className="hidden xl:flex items-center gap-1 overflow-x-auto no-scrollbar max-w-2xl px-4 translate-y-[1px]">
+          <div className="hidden lg:flex items-center gap-1 overflow-x-auto no-scrollbar max-w-2xl px-4 translate-y-[1px]">
             <button
               onClick={() => setView('details')}
               className="px-4 py-2 font-display text-[10px] uppercase font-bold tracking-[0.2em] text-muted hover:text-primary transition-all whitespace-nowrap border-b-2 border-transparent"
@@ -72,11 +72,11 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
             {onSearchOpenChange && (
               <button
                 onClick={() => onSearchOpenChange(true)}
-                className="hidden md:flex items-center gap-2 px-3 sm:px-4 py-2 bg-surface border border-border rounded-full hover:border-primary transition-all group"
+                className="hidden lg:flex items-center gap-2 px-3 sm:px-4 py-2 bg-surface border border-border rounded-full hover:border-primary transition-all group"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground group-hover:text-primary transition-colors"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 <span className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground transition-colors hidden sm:inline">Search selection...</span>
-                <kbd className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-mono text-muted-foreground bg-background border border-border rounded">
+                <kbd className="hidden xl:inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-mono text-muted-foreground bg-background border border-border rounded">
                   ⌘K
                 </kbd>
               </button>
@@ -86,7 +86,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
             {onSearchOpenChange && (
               <button
                 onClick={() => onSearchOpenChange(true)}
-                className="md:hidden p-2 text-muted hover:text-foreground transition-colors active:scale-95"
+                className="lg:hidden p-2 text-muted hover:text-foreground transition-colors active:scale-95"
                 aria-label="Search"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -95,10 +95,10 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
 
             <a 
               href="tel:+2349053063345"
-              className="hidden md:flex items-center gap-2 font-display text-[10px] sm:text-[11px] font-bold tracking-widest text-muted hover:text-primary transition-colors group"
+              className="hidden lg:flex items-center gap-2 font-display text-[10px] sm:text-[11px] font-bold tracking-widest text-muted hover:text-primary transition-colors group"
             >
               <Phone size={13} className="group-hover:text-primary transition-colors" />
-              <span className="hidden lg:inline">CALL US</span>
+              <span className="hidden xl:inline">CALL US</span>
             </a>
             
             <ThemeToggle />
@@ -106,7 +106,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
             {/* Mobile Toggle */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 sm:p-3 text-muted hover:text-foreground transition-colors active:scale-95"
+              className="lg:hidden p-2 sm:p-3 text-muted hover:text-foreground transition-colors active:scale-95"
               aria-label="Toggle navigation"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -122,7 +122,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[110] xl:hidden"
+            className="fixed inset-0 z-[110] lg:hidden"
           >
             <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
             <motion.div 
