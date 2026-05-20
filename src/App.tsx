@@ -7,13 +7,14 @@ import DishCard from './components/DishCard';
 import DetailsPage from './components/DetailsPage';
 import FoodDetailsPage from './components/FoodDetailsPage';
 import NotFoundPage from './components/NotFoundPage';
-import SearchModal from './components/Search';
 import { MENU_CATEGORIES, MENU_ITEMS } from './constants';
 import { MenuItem } from './types';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, MapPin, Instagram, Twitter, Facebook, Music, ExternalLink, Mail } from 'lucide-react';
-import choplifeVideo from './assets/videos/choplifebistroo (@choplifebistroo).mp4';
-import choplifeLogo from './assets/images/Choplife-bistro-logo-04.png';
+import { ArrowRight, Instagram, Facebook, Music, ExternalLink, Mail } from 'lucide-react';
+import backroomVideo from './assets/videos/backroom-launge.mp4';
+import heroBanner from './assets/images/hero-banner.jpg';
+import loungeDetail from './assets/images/lounge-detail.jpg';
+import OptimizedImage from './components/OptimizedImage';
 
 function Home() {
   const [activeCategory, setActiveCategory] = useState('');
@@ -25,7 +26,7 @@ function Home() {
   // Preload critical images
   useEffect(() => {
     const criticalImages = [
-      'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&q=85&auto=format&fit=crop',
+      heroBanner,
     ];
 
     criticalImages.forEach(src => {
@@ -39,7 +40,7 @@ function Home() {
 
   useEffect(() => {
     if (selectedItem) {
-      navigate(`/food/${selectedItem.id}`);
+      navigate(`/selection/${selectedItem.id}`);
     }
   }, [selectedItem, navigate]);
 
@@ -96,7 +97,7 @@ function Home() {
       <AnimatePresence mode="wait">
         {selectedItem ? (
           <FoodDetailsPage 
-            key="food-details"
+            key="selection-details"
             item={selectedItem} 
             onBack={() => {
               setSelectedItem(null);
@@ -163,8 +164,8 @@ function Home() {
                       transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
                       className="aspect-square lg:aspect-[4/5] bg-gradient-to-br from-surface to-background border border-border rounded-[2rem] lg:rounded-[4rem] overflow-hidden relative"
                      >
-                       <video 
-                        src={choplifeVideo}
+                       <video
+                        src={backroomVideo}
                         autoPlay
                         loop
                         muted
@@ -177,9 +178,9 @@ function Home() {
 
                   <div className="max-w-2xl order-1 lg:order-2">
                     <span className="font-display text-[11px] lg:text-[13px] font-bold tracking-[0.5em] text-primary uppercase block mb-6 lg:mb-10">Our Roots</span>
-                    <h2 className="mb-8 lg:mb-12 text-foreground">MORE THAN A RESTAURANT. <span className="text-primary italic">A CELEBRATION.</span></h2>
+                    <h2 className="mb-8 lg:mb-12 text-foreground">MORE THAN A LOUNGE. <span className="text-primary italic">A RESET.</span></h2>
                     <p className="text-muted text-lg lg:text-2xl leading-relaxed mb-12 font-sans italic lg:not-italic lg:text-muted/80">
-                      At Choplife, food is a love language. We take the bold, smoky, soulful flavors passed down through generations and serve them in a space designed to make you feel like royalty. Every plate is a love letter to West African heritage.
+                      Backroom Lounge in Osogbo combines hospitality, culture, and calm in one intentional space. Come for refreshments, stay for quiet reflection, cultural discovery, and gatherings built around heritage and spirit.
                     </p>
                     
                     <button 
@@ -192,10 +193,10 @@ function Home() {
 
                     <div className="grid grid-cols-2 gap-12 lg:gap-20">
                       {[
-                        { label: "Generations of Taste", val: "100+" },
-                        { label: "Crafted Dishes", val: "50+" },
-                        { label: "Community First", val: "ALWAYS" },
-                        { label: "Joy Factor", val: "100%" }
+                        { label: "Cafe & Refreshments", val: "OPEN" },
+                        { label: "Cultural Museum", val: "ON-SITE" },
+                        { label: "Retreat Energy", val: "CALM" },
+                        { label: "Community Gatherings", val: "CURATED" }
                       ].map((stat, i) => (
                         <motion.div 
                           key={stat.label}
@@ -213,8 +214,16 @@ function Home() {
               </section>
 
               {/* Location Section */}
-              <section id="location" className="py-12 sm:py-16 md:py-20 lg:py-40 xl:py-48">
-                <div className="container-xl">
+              <section id="location" className="py-12 sm:py-16 md:py-20 lg:py-40 xl:py-48 relative overflow-hidden">
+                {/* Background image for section depth */}
+                <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
+                  <OptimizedImage 
+                    src={loungeDetail} 
+                    alt="" 
+                    className="w-full h-full object-cover grayscale"
+                  />
+                </div>
+                <div className="container-xl relative z-10">
                    <div className="relative border border-border rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[5rem] overflow-hidden bg-surface shadow-2xl group">
                       {/* Abstract Interactive Glow */}
                       <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full hidden lg:block bg-gradient-to-bl from-primary/5 to-transparent pointer-events-none" />
@@ -253,7 +262,7 @@ function Home() {
 
                         <div className="h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto relative overflow-hidden">
                            <iframe 
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.079921880411!2d4.5424794740078855!3d7.78135079223831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103787beac10191b%3A0xe98efc513cebbdb7!2sChoplife%20Bistro%20Restaurants%20Osogbo!5e0!3m2!1sen!2sng!4v1778665418796!5m2!1sen!2sng" 
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1077749529154!2d4.5436992740078574!3d7.778395992241195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103787ebe8625a2f%3A0x287ea83fa338f825!2sNelson%20Mandela%20Freedom%20Park!5e0!3m2!1sen!2sng!4v1779231947858!5m2!1sen!2sng"
                               className="w-full h-full border-0"
                               allowFullScreen
                               loading="lazy" 
@@ -271,21 +280,21 @@ function Home() {
                   <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 sm:gap-12 lg:gap-0 mb-12 sm:mb-16 lg:mb-20 xl:mb-32">
                      <div className="w-full lg:w-auto">
                         <div className="font-bebas text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl leading-none mb-4 sm:mb-6 text-foreground">
-                          CHOP<span className="text-primary italic">LIFE.</span>
+                          BACKROOM<span className="text-primary italic">.</span>
                         </div>
-                        <p className="text-muted-foreground font-display text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase">Bold West African flavors, beautifully served.</p>
+                        <p className="text-muted-foreground font-display text-[10px] sm:text-xs lg:text-sm tracking-[0.2em] sm:tracking-[0.3em] uppercase">Cafe. Culture. Retreat. Community.</p>
                      </div>
                      
                      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 xl:gap-12 items-start sm:items-center w-full lg:w-auto">
-                        <a href="mailto:choplifebistrooo@gmail.com" className="font-display text-[8px] sm:text-[9px] lg:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-muted hover:text-primary transition-colors flex items-center gap-2 sm:gap-3 group">
+                        <a href="mailto:backroomloungeosogbo@gmail.com" className="font-display text-[8px] sm:text-[9px] lg:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-muted hover:text-primary transition-colors flex items-center gap-2 sm:gap-3 group">
                           <Mail size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
-                          <span className="hidden sm:inline">choplifebistrooo@gmail.com</span>
+                          <span className="hidden sm:inline">backroomloungeosogbo@gmail.com</span>
                           <span className="sm:hidden">Email</span>
                         </a>
                         {[
-                          { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/choplifebristroo' },
-                          { name: 'TikTok', icon: Music, url: 'https://tiktok.com/@choplifebristroo' },
-                          { name: 'Facebook', icon: Facebook, url: 'https://facebook.com/choplifebristroo' }
+                          { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/backroom.lounge.o' },
+                          { name: 'TikTok', icon: Music, url: 'https://www.tiktok.com/@backroom.lounge.o' },
+                          { name: 'Facebook', icon: Facebook, url: 'https://facebook.com/backroom.lounge.o' }
                         ].map(social => (
                           <a key={social.name} href={social.url} className="font-display text-[8px] sm:text-[9px] lg:text-[11px] font-bold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-muted hover:text-primary transition-colors flex items-center gap-2 sm:gap-3 group">
                             <social.icon size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
@@ -298,7 +307,7 @@ function Home() {
 
                   <div className="flex flex-col sm:flex-row justify-between items-center pt-8 sm:pt-10 lg:pt-12 border-t border-border gap-4 sm:gap-6">
                      <div className="text-[9px] sm:text-[10px] font-mono text-muted-foreground uppercase tracking-[0.3em] sm:tracking-[0.4em] text-center sm:text-left">
-                        © 2026 CHOPLIFE BISTRO GROUP · DESIGNED FOR THE FUTURE.
+                        © 2026 Backroom Lounge · DESIGNED FOR THE FUTURE.
                      </div>
                      <div className="flex gap-4 sm:gap-6 lg:gap-8 text-[9px] sm:text-[10px] font-mono text-muted-foreground uppercase tracking-[0.15em] sm:tracking-[0.2em]">
                         <a href="#" className="hover:text-foreground">Privacy</a>
@@ -319,9 +328,8 @@ function FoodDetailsRoute() {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Extract food ID from pathname like /food/egusi
-  const foodId = location.pathname.replace('/food/', '') || '';
-  const item = MENU_ITEMS.find(i => i.id === foodId);
+  const selectionId = location.pathname.replace('/selection/', '') || '';
+  const item = MENU_ITEMS.find(i => i.id === selectionId);
 
   if (!item) {
     navigate('/');
@@ -330,7 +338,7 @@ function FoodDetailsRoute() {
 
   return (
     <FoodDetailsPage 
-      key="food-details"
+      key="selection-details"
       item={item} 
       onBack={() => navigate('/')} 
     />
@@ -344,7 +352,7 @@ export default function App() {
         <Cursor />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/food/:id" element={<FoodDetailsRoute />} />
+          <Route path="/selection/:id" element={<FoodDetailsRoute />} />
           <Route path="/details" element={<DetailsPage onBack={() => window.history.back()} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
@@ -352,3 +360,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+

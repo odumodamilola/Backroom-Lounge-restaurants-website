@@ -5,7 +5,7 @@ import { MENU_CATEGORIES } from '../constants';
 import { MenuItem } from '../types';
 import ThemeToggle from './ThemeToggle';
 import SearchModal from './Search';
-import choplifeLogo from '../assets/images/Choplife-bistro-logo-04.png';
+import backroomLogo from '../assets/images/Backroom-logo-landscape-02.png';
 
 interface NavbarProps {
   activeCategory: string;
@@ -39,7 +39,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
             }}
             className="flex items-center group"
           >
-            <img src={choplifeLogo} alt="Choplife Bistro" className="h-12 sm:h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain" />
+            <img src={backroomLogo} alt="Backroom Lounge" className="h-12 sm:h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain" />
           </a>
 
           {/* Desktop Category Navigation */}
@@ -75,7 +75,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
                 className="hidden md:flex items-center gap-2 px-3 sm:px-4 py-2 bg-surface border border-border rounded-full hover:border-primary transition-all group"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground group-hover:text-primary transition-colors"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                <span className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground transition-colors hidden sm:inline">Search menu...</span>
+                <span className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground transition-colors hidden sm:inline">Search selection...</span>
                 <kbd className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-mono text-muted-foreground bg-background border border-border rounded">
                   ⌘K
                 </kbd>
@@ -107,7 +107,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 sm:p-3 text-muted hover:text-foreground transition-colors active:scale-95"
-              aria-label="Toggle menu"
+              aria-label="Toggle navigation"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -133,7 +133,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
               className="absolute top-0 right-0 bottom-0 w-[85%] sm:w-3/4 max-w-sm bg-background border-l border-border p-6 sm:p-8 flex flex-col overflow-y-auto"
             >
               <div className="flex justify-between items-center mb-8 sm:mb-12">
-                <span className="font-bebas text-2xl sm:text-3xl text-foreground">MENU</span>
+                <span className="font-bebas text-2xl sm:text-3xl text-foreground">SELECTION</span>
                 <button onClick={() => setIsOpen(false)} className="p-2 text-muted-foreground hover:text-foreground transition-colors active:scale-95" aria-label="Close menu">
                   <X size={22} />
                 </button>
@@ -171,7 +171,7 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
 
               <div className="mt-auto pt-6 sm:pt-8 border-t border-border flex flex-col gap-3 sm:gap-4">
                 <a href="tel:+2349053063345" className="w-full py-3 sm:py-4 bg-primary text-white font-display text-[10px] sm:text-[11px] font-bold tracking-widest uppercase rounded-xl hover:bg-primary-dark transition-colors text-center block active:scale-[0.98]">
-                  BOOK A TABLE
+                  RESERVE A SPOT
                 </a>
                 <p className="text-center text-muted-foreground font-mono text-[8px] sm:text-[9px] uppercase tracking-[0.2em]">
                   Mandela Freedom Park, Osogbo
@@ -194,3 +194,5 @@ export default function Navbar({ activeCategory, setView, isSearchOpen = false, 
     </>
   );
 }
+
+

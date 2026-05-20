@@ -36,7 +36,7 @@ export default function NotFoundPage() {
           </h1>
           
           <p className="text-muted text-lg lg:text-xl mb-12 font-sans italic lg:not-italic">
-            The flavor you're looking for seems to have been cooked to perfection elsewhere.
+            The calm corner you're looking for is somewhere else in the lounge.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -65,13 +65,14 @@ export default function NotFoundPage() {
           className="mt-20 pt-8 border-t border-border"
         >
           <p className="font-display text-[9px] font-bold tracking-[0.3em] text-muted-foreground uppercase">
-            CHOPLIFE BISTRO
+            Backroom Lounge
           </p>
           <p className="text-muted-foreground text-xs mt-2">
-            Bold West African flavors, beautifully served.
+            Cafe. Culture. Retreat. Community.
           </p>
         </motion.div>
       </div>
     </div>
   );
 }
+

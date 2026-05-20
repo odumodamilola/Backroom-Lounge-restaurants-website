@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowDown, Sparkles } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
+import heroBanner from '../assets/images/hero-banner.jpg';
 
 export default function Hero() {
   return (
@@ -8,8 +9,8 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <OptimizedImage
-          src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&q=85&auto=format&fit=crop"
-          alt="Bold West African cuisine at Choplife Bistro"
+          src={heroBanner}
+          alt="Backroom Lounge hospitality and calm atmosphere in Osogbo"
           className="w-full h-full"
           priority
           width={1920}
@@ -37,14 +38,14 @@ export default function Hero() {
           >
             <Sparkles size={16} className="text-primary" />
             <span className="font-display text-[9px] sm:text-[10px] lg:text-[12px] font-bold tracking-[0.4em] sm:tracking-[0.5em] text-primary uppercase">
-              Premium West African Dining
+              Backroom Lounge Osogbo
             </span>
           </motion.div>
 
           <h1 className="text-white mb-4 sm:mb-6 lg:mb-8 drop-shadow-2xl">
-            WHERE BOLD<br />
-            <span className="text-primary italic">FLAVOR</span> MEETS<br />
-            BEAUTIFUL DINING<span className="text-primary">.</span>
+            WHERE CALM<br />
+            <span className="text-primary italic">CULTURE</span> MEETS<br />
+            CLASSY LOUNGING<span className="text-primary">.</span>
           </h1>
 
           <motion.p
@@ -53,7 +54,7 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-white/70 text-base sm:text-lg lg:text-xl xl:text-2xl font-sans max-w-xl mb-8 sm:mb-10 lg:mb-14 leading-relaxed"
           >
-            West Africa's finest dishes, crafted with ancestral fire and modern soul.
+            A tranquil multipurpose space for refreshments, cultural discovery, quiet retreat, and curated community gatherings.
           </motion.p>
 
           <motion.div
@@ -63,16 +64,16 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6"
           >
             <a
-              href="#african-dishes"
+              href="#cocktails"
               className="bg-primary hover:bg-primary-dark text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-5 rounded-full font-display text-[10px] sm:text-[11px] lg:text-[12px] font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all hover:scale-105 shadow-lg shadow-primary/20 text-center active:scale-95"
             >
-              Explore Menu
+              Explore Selection
             </a>
             <a
               href="#location"
               className="border border-white/20 hover:border-white/50 text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-5 rounded-full font-display text-[10px] sm:text-[11px] lg:text-[12px] font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all hover:bg-white/5 backdrop-blur-sm text-center active:scale-95"
             >
-              Book a Table
+              Plan a Visit
             </a>
           </motion.div>
         </motion.div>

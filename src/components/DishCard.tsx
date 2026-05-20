@@ -27,7 +27,7 @@ export default function DishCard({ item, onSelect }: DishCardProps) {
       <div className="relative aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] overflow-hidden">
         <OptimizedImage
           src={item.image || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80&auto=format&fit=crop'}
-          alt={`${item.name} - West African dish at Choplife Bistro`}
+          alt={`${item.name} at Backroom Lounge Osogbo`}
           className="w-full h-full transition-transform duration-700 group-hover:scale-105"
           width={800}
           height={600}

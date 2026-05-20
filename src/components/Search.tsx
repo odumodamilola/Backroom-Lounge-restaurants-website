@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import { Search as SearchIcon, X, ChevronRight } from 'lucide-react';
+import { Search as SearchIcon, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MenuItem } from '../types';
 import DishCard from './DishCard';
@@ -91,7 +91,7 @@ export default function SearchModal({ menuItems, onSelectItem, isOpen, onOpenCha
         className="hidden md:flex items-center gap-2 px-3 sm:px-4 py-2 bg-surface border border-border rounded-full hover:border-primary transition-all group"
       >
         <SearchIcon size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
-        <span className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground transition-colors hidden sm:inline">Search menu...</span>
+        <span className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground transition-colors hidden sm:inline">Search selection...</span>
         <kbd className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-mono text-muted-foreground bg-background border border-border rounded">
           ⌘K
         </kbd>
@@ -135,11 +135,11 @@ export default function SearchModal({ menuItems, onSelectItem, isOpen, onOpenCha
                 <input
                   ref={inputRef}
                   type="text"
-                  placeholder="Search dishes, ingredients, or categories..."
+                  placeholder="Search drinks, bottles, or categories..."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground outline-none text-base sm:text-lg min-w-0"
-                  aria-label="Search menu items"
+                  aria-label="Search lounge selection"
                 />
                 {query && (
                   <button
@@ -161,10 +161,10 @@ export default function SearchModal({ menuItems, onSelectItem, isOpen, onOpenCha
                   <div className="p-6 sm:p-8 text-center">
                     <SearchIcon size={36} className="mx-auto text-muted-foreground/30 mb-3 sm:mb-4" />
                     <p className="text-muted-foreground text-sm sm:text-base">
-                      Start typing to search our menu
+                      Start typing to search the Backroom selection
                     </p>
                     <p className="text-muted-foreground/60 text-xs mt-2">
-                      Try: "Jollof", "Chicken", "Spicy", "Drinks"
+                      Try: "Chapman", "Hennessy", "Tequila", "Mocktails"
                     </p>
                   </div>
                 )}
@@ -173,7 +173,7 @@ export default function SearchModal({ menuItems, onSelectItem, isOpen, onOpenCha
                   <div className="p-6 sm:p-8 text-center">
                     <X size={36} className="mx-auto text-muted-foreground/30 mb-3 sm:mb-4" />
                     <p className="text-muted-foreground text-sm sm:text-base">
-                      No menu items found for "{query}"
+                      No selections found for "{query}"
                     </p>
                     <p className="text-muted-foreground/60 text-xs mt-2">
                       Try a different search term

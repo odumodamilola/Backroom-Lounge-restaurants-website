@@ -62,8 +62,8 @@
     --foreground: #09090b;
     --surface: #fafafa;
     --surface-soft: #f4f4f5;
-    --primary: #e31e24;
-    --primary-dark: #b01419;
+    --primary: #fd7f06;
+    --primary-dark: #c85f00;
     --accent: #f5a623;
     --border: #e4e4e7;
     --muted: #71717a;
@@ -113,7 +113,7 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 20px rgba(227, 30, 36, 0.3);
+    text-shadow: 0 0 20px rgba(253, 127, 6, 0.3);
   }
 
   .perspective-1000 {

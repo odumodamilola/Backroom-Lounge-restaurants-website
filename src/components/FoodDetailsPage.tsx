@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowLeft, Clock, Flame, Utensils, Info, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Clock, Sparkles, Armchair, Info, CheckCircle2 } from 'lucide-react';
 import { MenuItem } from '../types';
 import OptimizedImage from './OptimizedImage';
 
@@ -20,7 +20,7 @@ export default function FoodDetailsPage({ item, onBack }: FoodDetailsPageProps) 
       <div className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
         <OptimizedImage
           src={item.image || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80&auto=format&fit=crop'}
-          alt={`${item.name} - Premium dish at Choplife Bistro Osogbo`}
+          alt={`${item.name} at Backroom Lounge Osogbo`}
           className="w-full h-full grayscale-[0.1] hover:grayscale-0 transition-all duration-700"
           priority
           width={1600}
@@ -36,7 +36,7 @@ export default function FoodDetailsPage({ item, onBack }: FoodDetailsPageProps) 
             className="group flex items-center gap-2 text-white bg-black/40 backdrop-blur-md px-4 sm:px-6 py-2.5 sm:py-3 rounded-full hover:bg-primary transition-all font-display text-[10px] sm:text-[11px] font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase border border-white/10 active:scale-95"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            Back to Menu
+            Back to Selection
           </button>
         </div>
 
@@ -61,10 +61,10 @@ export default function FoodDetailsPage({ item, onBack }: FoodDetailsPageProps) 
       </div>
 
       <div className="container-xl py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 xl:gap-24">
-        {/* Left Column: Story & Description */}
+        {/* Left Column: Lounge Context */}
         <div className="lg:col-span-2 space-y-8 sm:space-y-10 lg:space-y-12">
           <section>
-            <h2 className="font-display text-[10px] sm:text-[11px] font-bold tracking-[0.4em] sm:tracking-[0.5em] text-primary uppercase block mb-6 sm:mb-8">The Story</h2>
+            <h2 className="font-display text-[10px] sm:text-[11px] font-bold tracking-[0.4em] sm:tracking-[0.5em] text-primary uppercase block mb-6 sm:mb-8">The Mood</h2>
             <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-muted leading-relaxed font-sans italic lg:not-italic drop-shadow-sm">
               {item.description}
             </p>
@@ -73,35 +73,35 @@ export default function FoodDetailsPage({ item, onBack }: FoodDetailsPageProps) 
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             <div className="p-6 sm:p-8 lg:p-12 bg-surface border border-border rounded-2xl sm:rounded-3xl">
               <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <Flame className="text-primary" size={24} />
-                <h3 className="font-display font-bold uppercase tracking-wider text-sm sm:text-base">Soul Factor</h3>
+                <Sparkles className="text-primary" size={24} />
+                <h3 className="font-display font-bold uppercase tracking-wider text-sm sm:text-base">Lounge Fit</h3>
               </div>
               <p className="text-muted leading-relaxed text-sm sm:text-base">
-                Prepared with ancestral heat and a focus on depth. Every ingredient is selected for its vibration and history.
+                Chosen for a relaxed Backroom setting where refreshment, comfort, and atmosphere sit at the center of the visit.
               </p>
             </div>
             <div className="p-6 sm:p-8 lg:p-12 bg-surface border border-border rounded-2xl sm:rounded-3xl">
               <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <Utensils className="text-primary" size={24} />
-                <h3 className="font-display font-bold uppercase tracking-wider text-sm sm:text-base">Kitchen Notes</h3>
+                <Armchair className="text-primary" size={24} />
+                <h3 className="font-display font-bold uppercase tracking-wider text-sm sm:text-base">Backroom Notes</h3>
               </div>
               <p className="text-muted leading-relaxed text-sm sm:text-base">
-                We recommend pairing this with our signature palm wine reduction or a crisp local lager to balance the bold spices.
+                Best enjoyed with a calm corner, good conversation, or a slow reset before moving back into the city.
               </p>
             </div>
           </section>
         </div>
 
-        {/* Right Column: Specs & CTA */}
+        {/* Right Column: Selection Details */}
         <aside className="space-y-8 sm:space-y-10">
           <div className="bg-surface-soft border border-border rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-8 lg:p-10 space-y-6 sm:space-y-8">
-            <h3 className="font-bebas text-2xl sm:text-3xl">DISH SPECIFICATIONS</h3>
+            <h3 className="font-bebas text-2xl sm:text-3xl">SELECTION DETAILS</h3>
             
             <div className="space-y-4 sm:space-y-6">
               {[
-                { icon: Clock, label: "Prep Time", val: "Slow Cooked" },
-                { icon: Info, label: "Allergens", val: "Nut-free option available" },
-                { icon: CheckCircle2, label: "Availability", val: "Daily Special" }
+                { icon: Clock, label: "Service Style", val: "Relaxed" },
+                { icon: Info, label: "Setting", val: "Cafe & Lounge" },
+                { icon: CheckCircle2, label: "Availability", val: "Ask on arrival" }
               ].map((spec, i) => (
                 <div key={i} className="flex items-center justify-between border-b border-border pb-3 sm:pb-4">
                   <div className="flex items-center gap-2 sm:gap-3 text-muted">
@@ -127,13 +127,13 @@ export default function FoodDetailsPage({ item, onBack }: FoodDetailsPageProps) 
 
           <div className="p-6 sm:p-8 border border-border rounded-[1.5rem] sm:rounded-[2rem] flex items-center justify-center text-center">
             <p className="text-muted-foreground font-display text-[9px] sm:text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] leading-relaxed">
-              CHOPLIFE BISTRO FLAGSHIP · OSOGBO NIGERIA
+              Backroom Lounge Flagship · OSOGBO NIGERIA
             </p>
           </div>
         </aside>
       </div>
 
-      {/* Suggested Pairings - Simple placeholder footer */}
+      {/* Selection footer */}
       <footer className="bg-surface-soft py-12 sm:py-16 lg:py-20 border-t border-border">
         <div className="container-xl text-center">
           <h2 className="font-bebas text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-8 sm:mb-12">YOU MIGHT ALSO VIBE WITH</h2>
@@ -141,10 +141,12 @@ export default function FoodDetailsPage({ item, onBack }: FoodDetailsPageProps) 
             onClick={onBack}
             className="text-primary font-display text-[10px] sm:text-[11px] font-bold tracking-[0.3em] sm:tracking-[0.4em] uppercase border-b-2 border-primary pb-2 hover:text-primary-dark hover:border-primary-dark transition-all active:scale-95"
           >
-            DISCOVER THE FULL MENU
+            DISCOVER THE FULL SELECTION
           </button>
         </div>
       </footer>
     </motion.div>
   );
 }
+
+
